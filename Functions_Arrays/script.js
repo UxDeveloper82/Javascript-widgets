@@ -1,3 +1,5 @@
+'use strict';
+
 const companies= [
     {name: "Company One", category: "Finance", start: 1981, end: 2004},
     {name: "Company Two", category: "Retail", start: 1992, end: 2008},
@@ -11,6 +13,75 @@ const companies= [
   ];
   
   const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+
+function writeArray(msg, arr) {
+  //Join Method
+  let arrString = arr.join(' | ');
+  document.write("<b>" + msg + ": </b>" + arrString + "<br><br>");
+}
+
+function writeIt() {
+   const weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday","Friday"];
+   writeArray("Week-Days", weekDays);
+   const weekEnd = new Array();
+   //Push Method
+   weekEnd.push("Saturday");
+   weekEnd.push("Sunday");
+   writeArray("WeekEnd", weekEnd);
+   //Concat Method
+   const week = weekDays.concat([]);
+   //Unshift Method
+   week.unshift(weekEnd[1]);
+   week.push(weekEnd[0]);
+   writeArray("Week", week);
+   //Slice Method
+   const midWeek = week.slice(2,5);
+   writeArray("Middle Week", midWeek);
+   const sortedWeek = week.sort();
+   document.write("<b> Sorted Days: <b><br>");
+   for(const dayIndex in sortedWeek) {
+    document.write(sortedWeek[dayIndex] + "</br>");
+  }
+}
+writeIt();
+//  function writeArray(msg, arr) {
+//   let arrString = arr.join(" | ");
+//   document.write("<b>" + msg + ": </b>" + arrString + "<br><br>");
+// }
+
+// function writeIt() {
+//   let weekDays = ["Monday","Tuesday","Wednesday","Thursday","Friday"];
+//   writeArray("Week Days", weekDays);
+//   let weekEnd = new Array();
+//   weekEnd.push("Saturday");
+//   weekEnd.push("Sunday");
+//   writeArray("WeekEnd", weekEnd)
+//   let week = weekDays.concat([]);
+//   week.unshift(weekEnd[1]);
+//   week.push(weekEnd[0]);
+//   writeArray("Week", week);
+//   let midWeek = week.slice(2,5);
+//   writeArray("Mid Week", midWeek);
+//   let sortedWeek = week.sort();
+//   document.write("<b> Sorted Days: </b></br>");
+//   for(dayIndex in sortedWeek) {
+//       document.write(sortedWeek[dayIndex] + "<br>");
+//   }
+
+// }    
+
+// const agesOfPeople = ages.filter(function(age){
+//   if(age <= 21){
+//      return true;
+//   } else {
+//     return false;
+//   }
+
+// })
+// console.log(agesOfPeople);
+
+// const orderRetailCompany = companies.sort((a,b) => (a.start - b.start) ? 1 : -1);
+//   console.log(orderRetailCompany);
 
 //   for (let i =0; i< companies.length; i++) {
 //       console.log(companies[i]);
@@ -109,13 +180,40 @@ const companies= [
 
 //console.log(totalYears);
 
-const combined = ages
-     .map(age => age* 2)
-     .filter(age => age >= 40)
-     .sort((a,b) => a-b)
-     .reduce((a,b) => a + b, 0)
+// const combined = ages
+//      .map(age => age* 2)
+//      .filter(age => age >= 40)
+//      .sort((a,b) => a-b)
+//      .reduce((a,b) => a + b, 0)
 
-console.log(combined);
+// console.log(combined);
+
+// const Person = function(firstName, birthYear) {
+//      // Instance properties
+//      this.firstName = firstName;
+//      this.birthYear = birthYear;
+
+     // Never do this
+    //  this.calcAge = function() {
+    //    console.log(2037 - this.birthYear);
+    //  }
+//}
+
+// const jonas = new Person('Jonas', 1990);
+// console.log(jonas);
+
+// const matilda = new Person('Matilda', 2017);
+// const jack = new Person('Jack', 1975);
+// console.log(matilda, jack);
+
+// console.log(Person.prototype);
+// //Prototypes
+// Person.prototype.calcAge = function() {
+//   console.log(2037 - this.birthYear)
+// };
+
+// jonas.calcAge();
+
 
 
 

@@ -10,15 +10,11 @@ let sliderImages = document.querySelectorAll(".slide"),
              sliderImages[i].style.display ="none";
          }
     }
-
-
     //Init slider
     function startSlide() {
         reset();
         sliderImages[0].style.display = "block";
     }
-
-
     //Show prev
     function slideLeft() {
         reset();
@@ -38,7 +34,6 @@ let sliderImages = document.querySelectorAll(".slide"),
         }
         slideLeft();
     });
- 
     //Right arrow click
     arrowRight.addEventListener("click", function() {
         if(current === sliderImages.length -1) {
@@ -46,6 +41,5 @@ let sliderImages = document.querySelectorAll(".slide"),
         }
         slideRight();
     })
-
     startSlide();
 
