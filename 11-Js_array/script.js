@@ -18,3 +18,17 @@ var superData = {"Super Man": ["lex Luther"],
      let itemStr = "<li>" + name + ":&nbsp;" + value + "</li>";
      return itemStr;
  }
+
+
+ function sumUp(n) {
+     let result = 0;
+     for(let i=1; i<=n; i++) {
+         result +=i;
+     }
+     return result;
+ }
+
+ let start = 0;
+ let end =0;
+
+ start = performance.now();
