@@ -58,11 +58,10 @@ function deleteCheck(e) {
 
 function filterTodo(e) {
   const todos = todoList.childNodes;
-  console.log(todos);
-  todos.forEach(function (todo) {
-    switch (e.target.value) {
-      case "all":
-        todo.style.display = "flex";
+ todos.forEach((todo) => {
+   const area = e.target.value;
+    switch (area) {
+        case "all": todo.style.display="flex";
         break;
       case "completed":
         if (todo.classList.contains("completed")) {
@@ -78,6 +77,8 @@ function filterTodo(e) {
           todo.style.display = "none";
         }
         break;
-    }
-  });
+        default:
+    console.log('Sorry, we are out of ' + expr + '.');
+       }
+   });
 }
